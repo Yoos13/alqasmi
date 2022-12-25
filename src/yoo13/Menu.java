@@ -15,8 +15,8 @@ public class Menu {
 		Scanner sc = new Scanner(System.in);
 		List<Department> DepObj = new ArrayList<Department>();
 
-//     List<String> list = new ArrayList<String>();
 
+			// Create while loop for the Menu
 		 while(z) {
 			System.out.println("Welcome to our Site");
 			System.out.println("\n\n");
@@ -32,7 +32,7 @@ public class Menu {
 			
 			
 			int input=sc.nextInt();
-			
+			// if condition for the first option in the menu
 			if(input==1) {
 				School SchoolObj = new School();
 				System.out.println("pleas enter the school Name: ");
@@ -44,7 +44,8 @@ public class Menu {
 				boolean S=true;
 				boolean c=true;
 				boolean m=true;
-				                                                                      
+				
+				// Create loop for  Department in case for add more dep                                                                        
 				while(i){
 				
 				Department dep = new Department();
@@ -169,7 +170,7 @@ public class Menu {
 			    		   i=false;
 			    	   }
 				}
-				
+				// printing section
 				else if(key.equals("no")) {
 					
 					 
