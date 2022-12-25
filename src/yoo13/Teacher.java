@@ -2,6 +2,7 @@ package yoo13;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Teacher {
 	private String Name;
@@ -26,7 +27,14 @@ public class Teacher {
 	public void setNoOfCourses(Integer noOfCourses) {
 		NoOfCourses = noOfCourses;
 	}
-	
+	Teacher(){
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("pleas enter the Name Of Techer:  ");
+		String Name1 = sc.next();
+		 setName(Name1);
+	    
+	}
 
 	
 }

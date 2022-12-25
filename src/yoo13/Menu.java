@@ -56,9 +56,9 @@ public class Menu {
 				
 				while(k) {
 				Teacher tech=new Teacher();
-				System.out.println("pleas enter the Name Of Techer:  ");
-				String Name1 = sc.next();
-			    tech.setName(Name1);
+//				System.out.println("pleas enter the Name Of Techer:  ");
+//				String Name1 = sc.next();
+//			    tech.setName(Name1);
 			    S=true;
 			    while(S) {
 			    	
