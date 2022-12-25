@@ -18,7 +18,8 @@ public class Menu {
 //     List<String> list = new ArrayList<String>();
 
 		 while(z) {
-			 System.out.println("\n\n");
+			System.out.println("Welcome to our Site");
+			System.out.println("\n\n");
 			System.out.println("pleas enter 1 to Creat OC");
 			System.out.println("pleas enter 2 to select School");
 			System.out.println("pleas enter 3 to select Department");
@@ -35,8 +36,9 @@ public class Menu {
 			if(input==1) {
 				School SchoolObj = new School();
 				System.out.println("pleas enter the school Name: ");
-				
 				SchoolObj.setName(sc.next());
+				System.out.println("pleas enter the Location: ");
+				SchoolObj.setLocation(sc.next());
 				boolean i=true;
 				boolean k=true;
 				boolean S=true;
