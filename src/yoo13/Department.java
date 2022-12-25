@@ -42,7 +42,7 @@ public class Department {
 		TecherObj1 = techerObj1;
 	}
 	
-	Teacher tech=new Teacher();
+//	Teacher tech=new Teacher();
 
 	
 }

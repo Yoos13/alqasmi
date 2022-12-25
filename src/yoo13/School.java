@@ -4,6 +4,7 @@ public class School {
 	String name;
 	int noOfsection;
 	String location;
+	
 
 	public String getName() {
 		return name;

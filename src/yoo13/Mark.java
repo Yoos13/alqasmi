@@ -1,5 +1,7 @@
 package yoo13;
 
+import java.util.Scanner;
+
 public class Mark {
 		private String type;
 		private Integer Grade;
@@ -16,4 +18,14 @@ public class Mark {
 			Grade = grade;
 		}
 		
+		Mark(){
+			Scanner sc = new Scanner(System.in);
+
+			System.out.println("Pleas enter the Grade:  ");
+			int Grade = sc.nextInt();
+			setGrade(Grade);
+			System.out.println("Pleas enter the Grade type:  ");
+			String type=sc.next();
+			setType(type);
+		}
 }

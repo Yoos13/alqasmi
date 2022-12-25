@@ -15,10 +15,10 @@ public class Menu {
 		Scanner sc = new Scanner(System.in);
 		List<Department> DepObj = new ArrayList<Department>();
 
-
+		System.out.println("Welcome to our Site");
 			// Create while loop for the Menu
 		 while(z) {
-			System.out.println("Welcome to our Site");
+			
 			System.out.println("\n\n");
 			System.out.println("pleas enter 1 to Creat OC");
 			System.out.println("pleas enter 2 to select School");
@@ -27,7 +27,12 @@ public class Menu {
 			System.out.println("pleas enter 5 to select Student");
 			System.out.println("pleas enter 6 to select Cours");
 			System.out.println("pleas enter 7 to select Mark");
-
+			
+			boolean i=true;
+			boolean k=true;
+			boolean S=true;
+			boolean c=true;
+			boolean m=true;
 			
 			
 			
@@ -39,11 +44,7 @@ public class Menu {
 				SchoolObj.setName(sc.next());
 				System.out.println("pleas enter the Location: ");
 				SchoolObj.setLocation(sc.next());
-				boolean i=true;
-				boolean k=true;
-				boolean S=true;
-				boolean c=true;
-				boolean m=true;
+				
 				
 				// Create loop for  Department in case for add more dep                                                                        
 				while(i){
@@ -56,6 +57,7 @@ public class Menu {
 				
 				
 				while(k) {
+					
 				Teacher tech=new Teacher();
 //				System.out.println("pleas enter the Name Of Techer:  ");
 //				String Name1 = sc.next();
@@ -64,9 +66,9 @@ public class Menu {
 			    while(S) {
 			    	
 			    Student stu1=new Student();
-				System.out.println("pleas enter the Name Of Student:  ");
-				String StuName = sc.next();
-				stu1.setName(StuName);
+//				System.out.println("pleas enter the Name Of Student:  ");
+//				String StuName = sc.next();
+//				stu1.setName(StuName);
 					c=true;
 				while(c) {
 					Cours cou1 = new Cours();
