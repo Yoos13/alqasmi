@@ -69,18 +69,23 @@ public class Menu {
 					c=true;
 				while(c) {
 					Cours cou1 = new Cours();
-					System.out.println("Pleas enter the Cours Id: ");
-					Integer Id = sc.nextInt();
-					cou1.setId(Id);
+//					System.out.println("Pleas enter the Cours Name: ");
+//					String type=sc.next();
+//					cou1.setType(type);
+//					System.out.println("Pleas enter the Cours Id: ");
+//					Integer Id = sc.nextInt();
+//					cou1.setId(Id);
 					m=true;
 				
 				while(m) {
 					
 				Mark Mrk11 = new Mark();
-				System.out.println("Pleas enter the Grade:  ");
-				int Grade = sc.nextInt();
-				Mrk11.setGrade(Grade);
-				
+//				System.out.println("Pleas enter the Grade:  ");
+//				int Grade = sc.nextInt();
+//				Mrk11.setGrade(Grade);
+//				System.out.println("Pleas enter the Grade:  ");
+//				String type=sc.next();
+//				Mrk11.setType(type);
 				System.out.println("Do you want add more Grade press yes/no?");
 				String key4=sc.next();
 				cou1.Mrk.add(Mrk11);
