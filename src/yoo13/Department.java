@@ -2,12 +2,20 @@ package yoo13;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Department {
 	List<Teacher> TecherObj1 = new ArrayList<Teacher>();
 	private String Name;
 	private Integer NoOfDeps;
 	private String NoOfTecher;
+	
+	Department(){
+		Scanner sc = new Scanner(System.in);
+		System.out.println("pleas enter the Name Of Department:  ");
+		String Name = sc.next();
+		setName(Name);
+	}
 	public String getName() {
 		return Name;
 	}

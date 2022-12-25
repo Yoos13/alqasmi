@@ -48,9 +48,9 @@ public class Menu {
 				while(i){
 				
 				Department dep = new Department();
-				System.out.println("pleas enter the Name Of Department:  ");
-				String Name = sc.next();
-				dep.setName(Name);
+//				System.out.println("pleas enter the Name Of Department:  ");
+//				String Name = sc.next();
+//				dep.setName(Name);
 				k=true;
 				
 				
@@ -171,8 +171,10 @@ public class Menu {
 					
 				    	   
 					
-			    	   System.out.println("Thanxs");
-						System.out.println("\n\n");
+			    	    System.out.println("Thanxs");
+			    	    System.out.println();
+						System.out.println("<<<<<<<<<< This is the Final Informatin >>>>>>>>>>");
+			    	    System.out.println();
 						System.out.println("School name " + SchoolObj.name );
 						
 						
@@ -187,6 +189,8 @@ public class Menu {
 								 System.out.println("Course Id :" + C.getId() );
 								 for(Mark M:C.Mrk) {
 									 System.out.println("Mark Grade :" + M.getGrade() );
+							    	    System.out.println("<<<<<<<<<< Good Bye >>>>>>>>>>");
+
 								 }
 								 
 								 }
