@@ -27,7 +27,7 @@ public class Menu {
 			System.out.println("pleas enter 5 to select Student");
 			System.out.println("pleas enter 6 to select Cours");
 			System.out.println("pleas enter 7 to select Mark");
-			
+
 			
 			
 			
@@ -87,29 +87,38 @@ public class Menu {
 			    if(key4.equals("yes")) {
 			    	m=true;
 			    	
+			 
 			    }
-			    else {
-			    	m=false;
-			    }
-			    }
-
+			    else if(key4.equals("no")) {
+			    	
+			 			  
+					  m=false;  	
+					    	
+			     }
+				    
+				    }
+			    
+			    
+			
 				System.out.println("Do you want add Cours ID press yes/no?");
 				String key3=sc.next();
 				stu1.Cou.add(cou1);
 				if(key3.equals("yes")) {
 					c=true;
 				}
-				else {
+				else if (key3.equals("no")){
 					c=false;
 				}
-				}
+			    
+			    }
+				
 			    System.out.println("Do you want add Student press yes/no?");
 				String key2=sc.next();
 				tech.stu.add(stu1);
 			    if(key2.equals("yes")) {
 			    	S=true;
 			    }
-			    else {
+			    else if(key2.equals("no")){
 			    	S=false;
 			    }
 			    
@@ -121,45 +130,69 @@ public class Menu {
 				if(key1.equals("yes")) {
 					k=true;
 				}
-				else {
+				else if(key1.equals("no")) {
 					k=false;
 				}
-				
 				}
 				DepObj.add(dep);
-				System.out.println("Do you want more department press yes/no?");
+				System.out.println("Do you want more department press yes/no/other to Exit?");
 				String key=sc.next();
 				
 				
 				if(key.equals("yes")) {
 				
                 i = true;
+                
+              
+		    	   
+				}
+				else if (key.equals("other")) {
+					System.out.println("pleas enter Exit to go to the Munu");
+			    	String key5=sc.next();
+			    	   if(key5.equals("Exit")) {
+			    		   i=false;
+			    		   m=false;
+			    		   c=false;
+			    		   S=false;
+			    		   k=false;
+			    		    z=true;
+	                   
+	                   
+
+			    	   }
+			    	   else if(key5.equals("con")) {
+			    		   i=false;
+			    	   }
 				}
 				
 				else if(key.equals("no")) {
-					System.out.println("Thanxs");
-					System.out.println("\n\n");
-					System.out.println("School name " + SchoolObj.name );
 					
+					 
 					
-					for (Department d : DepObj) {
+				    	   
+					
+			    	   System.out.println("Thanxs");
+						System.out.println("\n\n");
+						System.out.println("School name " + SchoolObj.name );
 						
-						System.out.println("Department Name:" + d.getName() );
-						for(Teacher T:d.TecherObj1) {
-							 System.out.println("Teacher Name:" + T.getName() );
-							 for(Student s :T.stu) {
-							 System.out.println("Student Name :" + s.getName() );
-							 for(Cours C: s.Cou) {
-							 System.out.println("Course Id :" + C.getId() );
-							 for(Mark M:C.Mrk) {
-								 System.out.println("Mark Grade :" + M.getGrade() );
-							 }
-							 
-							 }
-							 }
-						}
-						}
 						
+						for (Department d : DepObj) {
+							
+							System.out.println("Department Name:" + d.getName() );
+							for(Teacher T:d.TecherObj1) {
+								 System.out.println("Teacher Name:" + T.getName() );
+								 for(Student s :T.stu) {
+								 System.out.println("Student Name :" + s.getName() );
+								 for(Cours C: s.Cou) {
+								 System.out.println("Course Id :" + C.getId() );
+								 for(Mark M:C.Mrk) {
+									 System.out.println("Mark Grade :" + M.getGrade() );
+								 }
+								 
+								 }
+								 }
+							}
+							}
 					i=false;
 //					//z=false;
 				}
@@ -176,6 +209,7 @@ public class Menu {
 				//}
 					//i=false;
 				}
+				
 			}
 			
 		 
