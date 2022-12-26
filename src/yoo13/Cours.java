@@ -3,6 +3,7 @@ package yoo13;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.Stack;
 
 public class Cours {
 	private Integer Id;
@@ -12,13 +13,17 @@ public class Cours {
 	List<Mark> Mrk=new ArrayList<Mark>();
 	Cours(){
 		Scanner sc = new Scanner(System.in);
+		Stack<String> stack = new Stack<String>(); 
 
 		System.out.println("Pleas enter the Cours Name: ");
 		String type=sc.next();
 		setType(type);
+		stack.push(type);
 		System.out.println("Pleas enter the Cours Id: ");
 		Integer Id = sc.nextInt();
 		setId(Id);
+		String id=Integer.toString(Id);
+		stack.push(id);
 	}
 	public List<Mark> getMrk() {
 		return Mrk;

@@ -1,6 +1,7 @@
 package yoo13;
 
 import java.util.Scanner;
+import java.util.Stack;
 
 public class Mark {
 		private String type;
@@ -19,13 +20,18 @@ public class Mark {
 		}
 		
 		Mark(){
+			Stack<String> stack = new Stack<String>(); 
+
 			Scanner sc = new Scanner(System.in);
 
 			System.out.println("Pleas enter the Grade:  ");
 			int Grade = sc.nextInt();
 			setGrade(Grade);
+			String grade=Integer.toString(Grade);
+			stack.push(grade);
 			System.out.println("Pleas enter the Grade type:  ");
 			String type=sc.next();
 			setType(type);
+			stack.push(type);
 		}
 }

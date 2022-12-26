@@ -3,19 +3,26 @@ package yoo13;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.Stack;
 
 public class Department {
 	List<Teacher> TecherObj1 = new ArrayList<Teacher>();
 	private String Name;
 	private Integer NoOfDeps;
 	private String NoOfTecher;
+	Stack<String> stack = new Stack<String>(); 
 	
 	Department(){
+		
 		Scanner sc = new Scanner(System.in);
-		System.out.println("pleas enter the Name Of Department:  ");
-		String Name = sc.next();
-		setName(Name);
+//		System.out.println("pleas enter the Name Of Department:  ");
+//		String Name = sc.next();
+//		stack.push(Name);
+//		setName(Name);
+		
 	}
+   
+	
 	public String getName() {
 		return Name;
 	}
@@ -41,6 +48,8 @@ public class Department {
 	public void setTecherObj1(List<Teacher> techerObj1) {
 		TecherObj1 = techerObj1;
 	}
+	
+	
 	
 //	Teacher tech=new Teacher();
 

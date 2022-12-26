@@ -1,5 +1,5 @@
 package yoo13;
-
+import java.util.Stack; 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -14,6 +14,7 @@ public class Menu {
 		boolean z = true;
 		Scanner sc = new Scanner(System.in);
 		List<Department> DepObj = new ArrayList<Department>();
+		Stack<String> stack = new Stack<String>(); 
 
 		System.out.println("Welcome to our Site");
 		// Create while loop for the Menu
@@ -27,7 +28,7 @@ public class Menu {
 			System.out.println("pleas enter 5 to select Student");
 			System.out.println("pleas enter 6 to select Cours");
 			System.out.println("pleas enter 7 to select Mark");
-
+			System.out.println("pleas enter 8 to print History");
 			boolean i = true;
 			boolean k = true;
 			boolean S = true;
@@ -39,36 +40,70 @@ public class Menu {
 			if (input == 1) {
 				School SchoolObj = new School();
 				System.out.println("pleas enter the school Name: ");
-				SchoolObj.setName(sc.next());
+				String Name =sc.next();
+				SchoolObj.setName(Name);
+				stack.push(Name);
 				System.out.println("pleas enter the Location: ");
-				SchoolObj.setLocation(sc.next());
+				//SchoolObj.setLocation(sc.next());
+				String Loc =sc.next();
+				stack.push(Loc);
 
 				// Create loop for Department in case for add more dep
 				while (i) {
 
 					Department dep = new Department();
-
+					System.out.println("pleas enter the Name Of Department:  ");
+					String Name1 = sc.next();
+					stack.push(Name1);
+					dep.setName(Name1);
 					k = true;
 
 					while (k) {
 
 						Teacher tech = new Teacher();
-
+						System.out.println("pleas enter the Name Of Techer:  ");
+						String Name2 = sc.next();
+						stack.push(Name2);
+						 tech.setName(Name2);
 						S = true;
 						while (S) {
 
 							Student stu1 = new Student();
-
+							System.out.println("pleas enter the Name Of Student:  ");
+							String StuName = sc.next();
+							stack.push(StuName);
+							stu1.setName(StuName);
+							System.out.println("pleas enter the ID Of Student:  ");
+							int id=sc.nextInt();
+							String id1=Integer.toString(id);
+							stack.push(id1);
+							stu1.setId(id);
 							c = true;
 							while (c) {
 								Cours cou1 = new Cours();
-
+								System.out.println("Pleas enter the Cours Name: ");
+								String type=sc.next();
+								cou1.setType(type);
+								stack.push(type);
+								System.out.println("Pleas enter the Cours Id: ");
+								Integer Id = sc.nextInt();
+								cou1.setId(Id);
+								String id2=Integer.toString(Id);
+								stack.push(id2);
 								m = true;
 
 								while (m) {
 
 									Mark Mrk11 = new Mark();
-
+									System.out.println("Pleas enter the Grade:  ");
+									int Grade = sc.nextInt();
+									Mrk11.setGrade(Grade);
+									String grade=Integer.toString(Grade);
+									stack.push(grade);
+									System.out.println("Pleas enter the Grade type:  ");
+									String type1=sc.next();
+									Mrk11.setType(type1);
+									stack.push(type1);
 									System.out.println("Do you want add more Grade press yes/no?");
 									String key4 = sc.next();
 									cou1.Mrk.add(Mrk11);
@@ -117,7 +152,7 @@ public class Menu {
 					DepObj.add(dep);
 					System.out.println("Do you want more department press yes/no/other to Exit?");
 					String key = sc.next();
-
+					
 					if (key.equals("yes")) {
 
 						i = true;
@@ -219,7 +254,17 @@ public class Menu {
 				System.out.println("Pleas enter the Grade:  ");
 				Integer Grade = sc.nextInt();
 				MarkObj.setGrade(Grade);
-			} else {
+				
+			} else if(input==8) {
+				
+				for(String Stk: stack) {
+					System.out.println(Stk);
+				}
+					
+				
+				
+			}
+			else {
 				z = false;
 				System.out.println("Good Bye");
 			}
