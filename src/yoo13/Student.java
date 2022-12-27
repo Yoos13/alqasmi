@@ -10,19 +10,19 @@ public class Student {
 	private String name;
 	List<Cours> Cou=new ArrayList<Cours>();
 //	Cours coursObj = new Cours();
-	Student(){
-		Stack<String> stack = new Stack<String>(); 
-		Scanner sc = new Scanner(System.in);
-		System.out.println("pleas enter the Name Of Student:  ");
-		String StuName = sc.next();
-		stack.push(StuName);
-		setName(StuName);
-		System.out.println("pleas enter the ID Of Student:  ");
-		int id=sc.nextInt();
-		String id1=Integer.toString(id);
-		stack.push(id1);
-		setId(id);
-	}
+//	Student(){
+//		Stack<String> stack = new Stack<String>(); 
+//		Scanner sc = new Scanner(System.in);
+//		System.out.println("pleas enter the Name Of Student:  ");
+//		String StuName = sc.next();
+//		stack.push(StuName);
+//		setName(StuName);
+//		System.out.println("pleas enter the ID Of Student:  ");
+//		int id=sc.nextInt();
+//		String id1=Integer.toString(id);
+//		stack.push(id1);
+//		setId(id);
+//	}
 public int getId() {
 	return id;
 }

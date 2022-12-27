@@ -19,19 +19,19 @@ public class Mark {
 			Grade = grade;
 		}
 		
-		Mark(){
-			Stack<String> stack = new Stack<String>(); 
-
-			Scanner sc = new Scanner(System.in);
-
-			System.out.println("Pleas enter the Grade:  ");
-			int Grade = sc.nextInt();
-			setGrade(Grade);
-			String grade=Integer.toString(Grade);
-			stack.push(grade);
-			System.out.println("Pleas enter the Grade type:  ");
-			String type=sc.next();
-			setType(type);
-			stack.push(type);
-		}
+//		Mark(){
+//			Stack<String> stack = new Stack<String>(); 
+//
+//			Scanner sc = new Scanner(System.in);
+//
+//			System.out.println("Pleas enter the Grade:  ");
+//			int Grade = sc.nextInt();
+//			setGrade(Grade);
+//			String grade=Integer.toString(Grade);
+//			stack.push(grade);
+//			System.out.println("Pleas enter the Grade type:  ");
+//			String type=sc.next();
+//			setType(type);
+//			stack.push(type);
+//		}
 }

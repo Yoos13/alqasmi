@@ -12,15 +12,15 @@ public class Department {
 	private String NoOfTecher;
 	Stack<String> stack = new Stack<String>(); 
 	
-	Department(){
-		
-		Scanner sc = new Scanner(System.in);
-//		System.out.println("pleas enter the Name Of Department:  ");
-//		String Name = sc.next();
-//		stack.push(Name);
-//		setName(Name);
-		
-	}
+//	Department(){
+//		
+//		Scanner sc = new Scanner(System.in);
+////		System.out.println("pleas enter the Name Of Department:  ");
+////		String Name = sc.next();
+////		stack.push(Name);
+////		setName(Name);
+//		
+//	}
    
 	
 	public String getName() {

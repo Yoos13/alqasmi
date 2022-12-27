@@ -1,20 +1,26 @@
 package yoo13;
-import java.util.Stack; 
+
+import java.util.Stack;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 import javax.print.attribute.Size2DSyntax;
 import javax.swing.plaf.synth.SynthButtonUI;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.Writer;
+import java.io.IOException;
 
 public class Menu {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		boolean z = true;
 		Scanner sc = new Scanner(System.in);
 		List<Department> DepObj = new ArrayList<Department>();
-		Stack<String> stack = new Stack<String>(); 
+		Stack<String> stack = new Stack<String>();
 
 		System.out.println("Welcome to our Site");
 		// Create while loop for the Menu
@@ -29,6 +35,9 @@ public class Menu {
 			System.out.println("pleas enter 6 to select Cours");
 			System.out.println("pleas enter 7 to select Mark");
 			System.out.println("pleas enter 8 to print History");
+			System.out.println("pleas enter 9 to Read from file");
+
+			
 			boolean i = true;
 			boolean k = true;
 			boolean S = true;
@@ -40,12 +49,12 @@ public class Menu {
 			if (input == 1) {
 				School SchoolObj = new School();
 				System.out.println("pleas enter the school Name: ");
-				String Name =sc.next();
+				String Name = sc.next();
 				SchoolObj.setName(Name);
 				stack.push(Name);
 				System.out.println("pleas enter the Location: ");
-				//SchoolObj.setLocation(sc.next());
-				String Loc =sc.next();
+				// SchoolObj.setLocation(sc.next());
+				String Loc = sc.next();
 				stack.push(Loc);
 
 				// Create loop for Department in case for add more dep
@@ -64,7 +73,7 @@ public class Menu {
 						System.out.println("pleas enter the Name Of Techer:  ");
 						String Name2 = sc.next();
 						stack.push(Name2);
-						 tech.setName(Name2);
+						tech.setName(Name2);
 						S = true;
 						while (S) {
 
@@ -74,21 +83,21 @@ public class Menu {
 							stack.push(StuName);
 							stu1.setName(StuName);
 							System.out.println("pleas enter the ID Of Student:  ");
-							int id=sc.nextInt();
-							String id1=Integer.toString(id);
+							int id = sc.nextInt();
+							String id1 = Integer.toString(id);
 							stack.push(id1);
 							stu1.setId(id);
 							c = true;
 							while (c) {
 								Cours cou1 = new Cours();
 								System.out.println("Pleas enter the Cours Name: ");
-								String type=sc.next();
+								String type = sc.next();
 								cou1.setType(type);
 								stack.push(type);
 								System.out.println("Pleas enter the Cours Id: ");
 								Integer Id = sc.nextInt();
 								cou1.setId(Id);
-								String id2=Integer.toString(Id);
+								String id2 = Integer.toString(Id);
 								stack.push(id2);
 								m = true;
 
@@ -98,10 +107,10 @@ public class Menu {
 									System.out.println("Pleas enter the Grade:  ");
 									int Grade = sc.nextInt();
 									Mrk11.setGrade(Grade);
-									String grade=Integer.toString(Grade);
+									String grade = Integer.toString(Grade);
 									stack.push(grade);
 									System.out.println("Pleas enter the Grade type:  ");
-									String type1=sc.next();
+									String type1 = sc.next();
 									Mrk11.setType(type1);
 									stack.push(type1);
 									System.out.println("Do you want add more Grade press yes/no?");
@@ -152,7 +161,7 @@ public class Menu {
 					DepObj.add(dep);
 					System.out.println("Do you want more department press yes/no/other to Exit?");
 					String key = sc.next();
-					
+
 					if (key.equals("yes")) {
 
 						i = true;
@@ -174,25 +183,34 @@ public class Menu {
 					}
 					// printing section
 					else if (key.equals("no")) {
+						FileWriter myWriter = new FileWriter("History.txt");
+						myWriter.write("Thanxs");
+						myWriter.write("\n");
+						myWriter.write("<<<<<<<<<< This is the Final Informatin >>>>>>>>>>");
+						myWriter.write("\n");
+						myWriter.write("School name " + SchoolObj.name);
+						myWriter.write("\n");
 
-						System.out.println("Thanxs");
-						System.out.println();
-						System.out.println("<<<<<<<<<< This is the Final Informatin >>>>>>>>>>");
-						System.out.println();
-						System.out.println("School name " + SchoolObj.name);
 
 						for (Department d : DepObj) {
 
-							System.out.println("Department Name:" + d.getName());
+//							System.out.println("Department Name:" + d.getName());
+							myWriter.write("Department Name:" + d.getName());
+							myWriter.write("\n");
 							for (Teacher T : d.TecherObj1) {
-								System.out.println("Teacher Name:" + T.getName());
+								myWriter.write("Teacher Name:" + T.getName());
+								myWriter.write("\n");
 								for (Student s : T.stu) {
-									System.out.println("Student Name :" + s.getName());
+									myWriter.write("Student Name :" + s.getName());
+									myWriter.write("\n");
 									for (Cours C : s.Cou) {
-										System.out.println("Course Id :" + C.getId());
+										myWriter.write("Course Id :" + C.getId());
+										myWriter.write("\n");
 										for (Mark M : C.Mrk) {
-											System.out.println("Mark Grade :" + M.getGrade());
-											System.out.println("<<<<<<<<<< Good Bye >>>>>>>>>>");
+											myWriter.write("Mark Grade :" + M.getGrade());
+											myWriter.write("\n");
+											myWriter.write("<<<<<<<<<< Good Bye >>>>>>>>>>");
+											myWriter.write("\n");
 
 										}
 
@@ -200,6 +218,7 @@ public class Menu {
 								}
 							}
 						}
+						myWriter.close();
 						i = false;
 //					
 					}
@@ -254,17 +273,41 @@ public class Menu {
 				System.out.println("Pleas enter the Grade:  ");
 				Integer Grade = sc.nextInt();
 				MarkObj.setGrade(Grade);
-				
-			} else if(input==8) {
-				
-				for(String Stk: stack) {
+
+			} else if (input == 8) {
+
+				for (String Stk : stack) {
 					System.out.println(Stk);
 				}
-					
-				
-				
-			}
-			else {
+//				try {
+//				      FileWriter myWriter = new FileWriter("History.txt");
+//				      myWriter.write("This is History");
+//				      for(String Fri:stack) {
+//				    	  myWriter.write("\n"+Fri);
+//				      }
+//				      myWriter.close();
+//				}catch (IOException e) {
+//					 e.printStackTrace();
+//					
+//				}
+
+			}else if(input==9) {
+				try {
+				  File myObj = new File("Moha.txt");
+			      Scanner myReader = new Scanner(myObj);
+			      while (myReader.hasNextLine()) {
+			        String data = myReader.nextLine();
+			        System.out.println(data);
+			      }
+			      myReader.close();
+			    } catch (FileNotFoundException e) {
+			      System.out.println("An error occurred.");
+			      e.printStackTrace();
+			    }
+//					
+//						
+//				
+			} else {
 				z = false;
 				System.out.println("Good Bye");
 			}
