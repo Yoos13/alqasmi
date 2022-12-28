@@ -1,8 +1,9 @@
-Department Name:1
-Teacher Name:1
-Student Name :1
-Course Id :1
-Mark Grade :1
-<<<<<<<<<< Good Bye >>>>>>>>>>
-Mark Grade :16
+Thanxs
+<<<<<<<<<< This is the Final Informatin >>>>>>>>>>
+School name 1
+Department Name: 1
+Teacher Name: 1
+Student Name: 1
+Course Id: 1
+Mark Grade: 1
 <<<<<<<<<< Good Bye >>>>>>>>>>

@@ -7,8 +7,11 @@ import java.util.Scanner;
 
 import javax.print.attribute.Size2DSyntax;
 import javax.swing.plaf.synth.SynthButtonUI;
+
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.Writer;
 import java.io.IOException;
@@ -37,7 +40,6 @@ public class Menu {
 			System.out.println("pleas enter 8 to print History");
 			System.out.println("pleas enter 9 to Read from file");
 
-			
 			boolean i = true;
 			boolean k = true;
 			boolean S = true;
@@ -191,26 +193,36 @@ public class Menu {
 						myWriter.write("School name " + SchoolObj.name);
 						myWriter.write("\n");
 
-
 						for (Department d : DepObj) {
 
-//							System.out.println("Department Name:" + d.getName());
-							myWriter.write("Department Name:" + d.getName());
+							System.out.println("Department Name: " + d.getName());
+							myWriter.write("Department Name: " + d.getName());
 							myWriter.write("\n");
+							System.out.println("\n");
 							for (Teacher T : d.TecherObj1) {
-								myWriter.write("Teacher Name:" + T.getName());
+								myWriter.write("Teacher Name: " + T.getName());
 								myWriter.write("\n");
+								System.out.println("Teacher Name: " + T.getName());
+								System.out.println("\n");
 								for (Student s : T.stu) {
-									myWriter.write("Student Name :" + s.getName());
+									myWriter.write("Student Name: " + s.getName());
 									myWriter.write("\n");
+									System.out.println("Student Name: " + s.getName());
+									System.out.println("\n");
 									for (Cours C : s.Cou) {
-										myWriter.write("Course Id :" + C.getId());
+										myWriter.write("Course Id: " + C.getId());
 										myWriter.write("\n");
+										System.out.println("Course Id: " + C.getId());
+										System.out.println("\n");
 										for (Mark M : C.Mrk) {
-											myWriter.write("Mark Grade :" + M.getGrade());
+											myWriter.write("Mark Grade: " + M.getGrade());
 											myWriter.write("\n");
 											myWriter.write("<<<<<<<<<< Good Bye >>>>>>>>>>");
 											myWriter.write("\n");
+											System.out.println("Mark Grade: " + M.getGrade());
+											System.out.println("\n");
+											System.out.println("<<<<<<<<<< Good Bye >>>>>>>>>>");
+											System.out.println("\n");
 
 										}
 
@@ -291,23 +303,61 @@ public class Menu {
 //					
 //				}
 
-			}else if(input==9) {
+			} else if (input == 9) {
 				try {
-				  File myObj = new File("Moha.txt");
-			      Scanner myReader = new Scanner(myObj);
-			      while (myReader.hasNextLine()) {
-			        String data = myReader.nextLine();
-			        System.out.println(data);
-			      }
-			      myReader.close();
-			    } catch (FileNotFoundException e) {
-			      System.out.println("An error occurred.");
-			      e.printStackTrace();
-			    }
+					File myObj = new File("C:\\Users\\Lenovo\\eclipse-workspace\\yoo13\\History.txt");
+					Scanner myReader = new Scanner(myObj);
+					while (myReader.hasNextLine()) {
+						String data = myReader.nextLine();
+						System.out.println(data);
+					}
+					myReader.close();
+				} catch (FileNotFoundException e) {
+					System.out.println("An error occurred.");
+					e.printStackTrace();
+				}
+				
 //					
 //						
 //				
-			} else {
+			}else if(input ==10) {
+//				File f1=new File("input.txt"); 
+				File f1=new File("C:\\\\Users\\\\Lenovo\\\\eclipse-workspace\\\\yoo13\\\\History.txt");   //Creation of File Descriptor for input file
+			      String[] words=null;  //Intialize the word Array
+			      
+			      
+			      FileReader fr = new FileReader(f1);  //Creation of File Reader object
+			      BufferedReader br = new BufferedReader(fr); //Creation of BufferedReader object
+			      String s;  
+			      System.out.println("Pleeas Enter the word you want to search: ");
+
+			      String input1=sc.next();   // Input word to be searched
+			      int count=0;   //Intialize the word to zero
+			      
+			      while((s=br.readLine())!=null)   //Reading Content from the file
+			      {
+			         words=s.split(" ");  //Split the word using space
+			          for (String word : words) 
+			          {
+			                 if (word.equals(input1))   //Search for the given word
+			                 {
+			                   count++;    //If Present increase the count by one
+			                 }
+			          }
+			      }
+			      if(count!=0)  //Check for count not equal to zero
+			      {
+			         System.out.println("The given word is present for "+count+ " Times in the file");
+			      }
+			      else
+			      {
+			         System.out.println("The given word is not present in the file");
+			      }
+			      
+			         fr.close();
+			   }
+
+			else {
 				z = false;
 				System.out.println("Good Bye");
 			}
